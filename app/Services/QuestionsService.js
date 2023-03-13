@@ -12,6 +12,7 @@ class QuestionsService {
   }
 
   chooseQuestion() {
+    console.log('choosing question');
     let randomIndex = Math.floor(Math.random() * appState.questions.length)
     appState.randomQuestion = appState.questions[randomIndex]
   }

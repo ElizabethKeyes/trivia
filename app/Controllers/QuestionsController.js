@@ -25,6 +25,7 @@ export class QuestionsController {
     appState.on('randomQuestion', _drawQuestion)
     appState.on('score', _drawScore)
     appState.on('category', this.fetchQuestions)
+    appState.on('questions', this.chooseQuestion)
   }
 
   async fetchQuestions() {
