@@ -1,1 +1,17 @@
 /* BASIC STYLES HERE */
+.my-card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em;
+}
+
+.my-card:hover {
+  transform: scale(1.02);
+  transition: all .2s ease-in-out
+}
+
+.q-button {
+  position: fixed;
+  right: 20px;
+}
