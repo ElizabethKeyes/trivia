@@ -7,7 +7,7 @@ class QuestionsService {
 
   async fetchQuestions() {
     // @ts-ignore
-    let response = await axios.get(`https://opentdb.com/api.php?amount=50&type=multiple`)
+    let response = await axios.get(`https://opentdb.com/api.php?amount=50&category=9`)
     appState.questions = response.data.results.map(q => new Question(q))
   }
 
@@ -27,7 +27,8 @@ class QuestionsService {
   }
 
   checkAnswer(answer) {
-    if (answer = appState.randomQuestion.correctAnswer) {
+    console.log('checking answer in the services', answer);
+    if (answer == appState.randomQuestion.correctAnswer) {
       Pop.toast('Correct!', 'success', 'top', 1500)
       this.chooseQuestion()
     } else {

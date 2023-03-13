@@ -24,4 +24,15 @@ export class Question {
     </ul>
   </div>`
   }
+
+  get BoolTemplate() {
+    return `
+    <div class="my-card elevation-3">
+    <h3>${this.question}</h3>
+    <ul>
+      <li class="selectable" onclick="app.questionsController.checkAnswer('True')">True</li>
+      <li class="selectable" onclick="app.questionsController.checkAnswer('False')">False</li>
+    </ul>
+  </div>`
+  }
 }

@@ -4,15 +4,20 @@ import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js";
 
 function _drawQuestion() {
-  questionsService.shuffleAnswers()
-  console.log(appState.randomQuestion, 'random question');
-  setHTML('question', appState.randomQuestion.QuizTemplate)
+  console.log(appState.randomQuestion.type, 'type of question');
+  if (appState.randomQuestion.type == "multiple") {
+    questionsService.shuffleAnswers()
+    console.log(appState.randomQuestion, 'random multiple choice question');
+    setHTML('question', appState.randomQuestion.QuizTemplate)
+  } else if (appState.randomQuestion.type == "boolean") {
+    console.log(appState.randomQuestion, 'random bool question');
+    setHTML('question', appState.randomQuestion.BoolTemplate)
+  }
 }
 
 export class QuestionsController {
   constructor() {
     this.fetchQuestions()
-    // appState.on('questions', _drawQuestions)
     appState.on('randomQuestion', _drawQuestion)
   }
 
