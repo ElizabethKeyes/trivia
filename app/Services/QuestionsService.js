@@ -7,7 +7,7 @@ class QuestionsService {
 
   async fetchQuestions() {
     // @ts-ignore
-    let response = await axios.get(`https://opentdb.com/api.php?amount=50&category=9`)
+    let response = await axios.get(`https://opentdb.com/api.php?amount=50&category=${appState.category}`)
     appState.questions = response.data.results.map(q => new Question(q))
   }
 
@@ -39,6 +39,11 @@ class QuestionsService {
 
   resetScore() {
     appState.score = 0
+  }
+
+  chooseCategory(category) {
+    console.log(category);
+    appState.category = category;
   }
 
 }
