@@ -1,4 +1,9 @@
 /* BASIC STYLES HERE */
+.my-header {
+  min-height: 8vh;
+  align-items: center;
+}
+
 .my-card {
   background-color: #fff;
   border-radius: 5px;
@@ -9,16 +14,6 @@
 .my-card:hover {
   transform: scale(1.02);
   transition: all .2s ease-in-out
-}
-
-.q-button {
-  position: fixed;
-  right: 20px;
-}
-
-.reset-button {
-  position: fixed;
-  right: 260px;
 }
 
 .my-score {
