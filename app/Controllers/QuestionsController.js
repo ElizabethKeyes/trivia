@@ -1,7 +1,7 @@
 import { appState } from "../AppState.js";
 import { questionsService } from "../Services/QuestionsService.js"
 import { Pop } from "../Utils/Pop.js";
-import { setHTML } from "../Utils/Writer.js";
+import { setHTML, setText } from "../Utils/Writer.js";
 
 function _drawQuestion() {
   console.log(appState.randomQuestion.type, 'type of question');
@@ -15,10 +15,15 @@ function _drawQuestion() {
   }
 }
 
+function _drawScore() {
+  setText('score', appState.score)
+}
+
 export class QuestionsController {
   constructor() {
     this.fetchQuestions()
     appState.on('randomQuestion', _drawQuestion)
+    appState.on('score', _drawScore)
   }
 
   async fetchQuestions() {
@@ -36,6 +41,10 @@ export class QuestionsController {
 
   checkAnswer(answer) {
     questionsService.checkAnswer(answer)
+  }
+
+  resetScore() {
+    questionsService.resetScore()
   }
 
 }

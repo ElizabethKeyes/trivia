@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="icon" href="https://freesvg.org/img/jean_victor_balin_unknown_green.png">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.1.96/css/materialdesignicons.min.css"
     integrity="sha512-NaaXI5f4rdmlThv3ZAVS44U9yNWJaUYWzPhvlg5SC7nMRvQYV9suauRK3gVbxh7qjE33ApTPD+hkOW78VSHyeg=="
@@ -18,19 +18,19 @@
 <body>
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">trivia</span>
-        <button class="btn btn-success q-button" onclick="app.questionsController.chooseQuestion()">Get a random
-          question</button>
-      </a>
+      <img src="https://freesvg.org/img/jean_victor_balin_unknown_green.png" height="45" alt="" loading="lazy"
+        class="ms-3">
+      <h3 class="ms-2">Trivia</h3>
+      <button class="btn btn-success q-button" onclick="app.questionsController.chooseQuestion()">Get a random
+        question</button>
+      <button class="btn btn-info reset-button" onclick="app.questionsController.resetScore()">Reset Score</button>
     </nav>
   </header>
   <main>
     <div class="container-fluid">
       <section class="row justify-content-center">
         <div class="col-8" id="question">
+          <h1 class="mt-5 pt-5">Get a random question to begin!</h1>
 
           <!-- <div class="my-card elevation-3">
             <h3>Question</h3>
@@ -50,6 +50,11 @@
             </ul>
           </div> -->
 
+        </div>
+      </section>
+      <section class="row my-score">
+        <div class="col-2">
+          <h4>Score: <span id="score">0</span></h4>
         </div>
       </section>
     </div>

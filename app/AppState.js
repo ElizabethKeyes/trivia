@@ -8,6 +8,7 @@ class AppState extends EventEmitter {
   questions = []
 
   randomQuestion = null
+  score = 0
 }
 
 export const appState = new Proxy(new AppState(), {

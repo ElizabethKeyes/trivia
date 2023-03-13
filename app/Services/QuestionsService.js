@@ -30,10 +30,15 @@ class QuestionsService {
     console.log('checking answer in the services', answer);
     if (answer == appState.randomQuestion.correctAnswer) {
       Pop.toast('Correct!', 'success', 'top', 1500)
+      appState.score += 1
       this.chooseQuestion()
     } else {
       Pop.toast('Try again!', 'error', 'top', 1500)
     }
+  }
+
+  resetScore() {
+    appState.score = 0
   }
 
 }

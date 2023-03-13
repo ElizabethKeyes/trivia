@@ -15,3 +15,14 @@
   position: fixed;
   right: 20px;
 }
+
+.reset-button {
+  position: fixed;
+  right: 260px;
+}
+
+.my-score {
+  position: fixed;
+  bottom: 40px;
+  width: 100%
+}
